@@ -4,7 +4,7 @@
 		<title>Ian Ming | Cloud Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport"
-			content="width=device-width, initial-scale=1, user-scalable=no" />
+		 content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
@@ -226,21 +226,22 @@
 									</header>
 									<div class="row">
 										<div class="col-12">
-											<form method="post" action="#">
+											<form method="POST" action="https://formspree.io/f/mdaavpkn">
+												<input type="hidden" name="_subject" value="New message from ianmingcloud.com" />
+												<input type="hidden" name="_captcha" value="false" />
+
 												<div class="row">
 													<div class="col-6 col-12-small">
 														<input type="text" name="name" id="name" placeholder="Name" />
 													</div>
 													<div class="col-6 col-12-small">
-														<input type="text" name="email" id="email" placeholder="Email" />
+													<input type="email" name="email" id="email" placeholder="Email" required />
 													</div>
 													<div class="col-12">
-														<input type="text" name="subject" id="subject"
-															placeholder="Subject" />
+														<input type="text" name="name" id="name" placeholder="Name" required />
 													</div>
 													<div class="col-12">
-														<textarea name="message" id="message"
-															placeholder="Message"></textarea>
+														<textarea name="message" id="message" placeholder="Message" required></textarea>
 													</div>
 													<div class="col-12">
 														<ul class="actions">
