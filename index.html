@@ -227,29 +227,34 @@
 									<div class="row">
 										<div class="col-12">
 											<form method="POST" action="https://formspree.io/f/mdaavpkn">
-												<input type="hidden" name="_subject" value="New message from ianmingcloud.com" />
-												<input type="hidden" name="_captcha" value="false" />
 
-												<div class="row">
-													<div class="col-6 col-12-small">
-														<input type="text" name="name" id="name" placeholder="Name" />
-													</div>
-													<div class="col-6 col-12-small">
-													<input type="email" name="email" id="email" placeholder="Email" required />
-													</div>
-													<div class="col-12">
-														<input type="text" name="name" id="name" placeholder="Name" required />
-													</div>
-													<div class="col-12">
-														<textarea name="message" id="message" placeholder="Message" required></textarea>
-													</div>
-													<div class="col-12">
-														<ul class="actions">
-															<li><input type="submit" value="Send Message" /></li>
-															<li><input type="reset" value="Clear Form" class="alt" /></li>
-														</ul>
-													</div>
-												</div>
+  												<input type="hidden" name="_subject" value="New message from ianmingcloud.com" />
+  												<input type="hidden" name="_captcha" value="false" />
+
+  												<div class="row">
+    												<div class="col-6 col-12-small">
+      													<input type="text" name="name" placeholder="Name" required />
+   													</div>
+
+    												<div class="col-6 col-12-small">
+      													<input type="email" name="email" placeholder="Email" required />
+    												</div>
+
+    												<div class="col-12">
+      													<input type="text" name="subject" placeholder="Subject" />
+    												</div>
+
+    												<div class="col-12">
+      													<textarea name="message" placeholder="Message" required></textarea>
+    												</div>
+
+    												<div class="col-12">
+      													<ul class="actions">
+        													<li><button type="submit">Send Message</button></li>
+        													<li><input type="reset" value="Clear Form" class="alt" /></li>
+      													</ul>
+    												</div>
+  												</div>
 											</form>
 										</div>
 										<div class="col-12">
@@ -281,6 +286,6 @@
 							<script src="assets/js/browser.min.js"></script>
 							<script src="assets/js/breakpoints.min.js"></script>
 							<script src="assets/js/util.js"></script>
-							<script src="assets/js/main.js"></script>
+							<script src="assets/js/main.js" defer></script>
 
 						</body>
