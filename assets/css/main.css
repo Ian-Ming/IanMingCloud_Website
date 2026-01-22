@@ -2551,6 +2551,31 @@ input, select, textarea {
     height: 260px !important;
   }
 }
+/* === FINAL HERO HEADSHOT STYLES (OVAL, STABLE) === */
+@media screen and (max-width: 1200px) {
+  #top .image.fit {
+    max-width: 320px;
+    margin: 0 auto 2.75rem auto !important;
+  }
+
+  #top .image.fit img {
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  #top header {
+    margin-top: 1.25rem !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #top .image.fit {
+    max-width: 260px;
+  }
+}
+
 
 
 
