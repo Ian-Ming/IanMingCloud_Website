@@ -2441,6 +2441,7 @@ input, select, textarea {
 					#copyright li:first-child {
 						margin-top: 0;
 					}
+	}
 
 /* === MOBILE / RESPONSIVE FIXES (CLEAN) === */
 
@@ -2453,61 +2454,9 @@ input, select, textarea {
   }
 }
 
-/* === CLEAN HERO (NO GRID, NO FLOATS) === */
+/* === HERO (DESKTOP + MOBILE) === */
 .hero-single {
   text-align: center;
-}
-
-.hero-image {
-  display: block;
-  max-width: 320px;
-  margin: 0 auto 2rem auto;
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 100%;
-  display: block;
-}
-
-@media screen and (max-width: 736px) {
-  .hero-image {
-    max-width: 260px;
-  }
-}
-/* Hard cap hero headshot on desktop + ensure it can't blow up */
-.hero-image {
-  max-width: 360px;
-  margin: 0 auto 2rem auto;
-}
-
-.hero-image img {
-  width: 100% !important;
-  height: auto !important;
-  display: block;
-}
-/* === HERO IMAGE: force oval + prevent template 'fit' styles === */
-.hero-image {
-  display: block;
-  width: 100%;
-  max-width: 360px;
-  margin: 0 auto 2rem auto;
-}
-
-.hero-image img {
-  width: 100% !important;
-  height: 360px !important;
-  object-fit: cover !important;
-  border-radius: 999px !important;
-  display: block;
-}
-@media screen and (max-width: 736px) {
-  .hero-image { max-width: 260px; }
-  .hero-image img { height: 260px !important; }
-}
-/* === HERO DESKTOP CONSTRAINTS === */
-.hero-single {
   max-width: 1100px;
   margin: 0 auto;
   padding: 4rem 1.5rem;
@@ -2515,16 +2464,23 @@ input, select, textarea {
 
 .hero-image {
   display: block;
-  max-width: 420px;   /* ← controls image size on desktop */
+  width: 100%;
+  max-width: 360px;     /* desktop size */
   margin: 0 auto 2rem auto;
 }
 
 .hero-image img {
   width: 100%;
-  height: auto;
-  max-height: 420px;
+  aspect-ratio: 1 / 1;  /* perfect circle container */
   object-fit: cover;
+  border-radius: 999px;
+  display: block;
 }
+
+@media screen and (max-width: 736px) {
+  .hero-image { max-width: 260px; }
+}
+
 
 
 
