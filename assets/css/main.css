@@ -2453,89 +2453,30 @@ input, select, textarea {
   }
 }
 
-/* HERO: stack image + text to prevent overlap (covers the "mid-size" issue) */
-@media screen and (max-width: 1200px) {
-  #top .row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  #top .row > [class*="col-"] {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-  }
-
-  #top .image.fit {
-    max-width: 320px;
-    margin: 0 auto 2.75rem auto !important;
-  }
-
-  /* Oval headshot */
-  #top .image.fit img {
-    width: 100%;
-    height: auto;
-    border-radius: 100%;
-    object-fit: cover;
-  }
-
-  #top header,
-  #top p,
-  #top .button {
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  #top header {
-    margin-top: 1.25rem !important;
-  }
+/* === CLEAN HERO (NO GRID, NO FLOATS) === */
+.hero-single {
+  text-align: center;
 }
 
-/* Phone sizing */
+.hero-image {
+  display: block;
+  max-width: 320px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 100%;
+  display: block;
+}
+
 @media screen and (max-width: 736px) {
-  #top .image.fit { max-width: 260px; }
-}
-
-/* iOS Safari: force true centering of hero headshot */
-@media screen and (max-width: 736px) {
-  #top .image.fit {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .hero-image {
+    max-width: 260px;
   }
 }
-/* === FINAL OVERRIDE: prevent hero overlap on iOS + small screens === */
-@media screen and (max-width: 736px) {
-  #top .row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
 
-  #top .row > [class*="col-"] {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-  }
-
-  #top .image.fit {
-    max-width: 280px !important;
-    margin: 0 auto 2.25rem auto !important;
-  }
-
-  #top header {
-    margin-top: 0 !important;
-  }
-
-  #top h1 {
-    position: relative !important;
-    z-index: 3 !important;
-  }
-}
 
 
 
