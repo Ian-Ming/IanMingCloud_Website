@@ -2476,6 +2476,12 @@ input, select, textarea {
     max-width: 260px;
   }
 }
+/* Desktop: prevent hero image from dominating viewport */
+@media screen and (min-width: 981px) {
+  .hero-image {
+    max-width: 360px;
+  }
+}
 
 
 
