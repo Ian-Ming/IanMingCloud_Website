@@ -2442,22 +2442,19 @@ input, select, textarea {
 						margin-top: 0;
 					}
 
-	}
+/* === MOBILE / RESPONSIVE FIXES (CLEAN) === */
+
+/* WORK CARDS: prevent featured icon from getting cropped */
 @media screen and (max-width: 736px) {
-
-  /* WORK CARDS: prevent featured icon from getting cropped */
-  .box.style1 {
-    overflow: visible;
-  }
-
+  .box.style1 { overflow: visible; }
   .box.style1 .icon.featured {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
   }
 }
 
-/* === HERO LAYOUT FIX: stop image/text overlap on mid + small screens === */
-@media screen and (max-width: 980px) {
+/* HERO: stack image + text to prevent overlap (covers the "mid-size" issue) */
+@media screen and (max-width: 1200px) {
   #top .row {
     display: flex !important;
     flex-direction: column !important;
@@ -2475,89 +2472,7 @@ input, select, textarea {
     margin: 0 auto 2.75rem auto !important;
   }
 
-  #top header,
-  #top p,
-  #top .button {
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
-}
-
-/* Slightly smaller headshot on phones */
-@media screen and (max-width: 736px) {
-  #top .image.fit { max-width: 260px; }
-}
-
-/* Force HERO columns to stack + clear at smaller widths (prevents overlap) */
-@media screen and (max-width: 1200px) {
-
-  /* clear any float grid behavior */
-  #top .row:after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-
-  /* make both hero columns full width */
-  #top .col-4,
-  #top .col-8,
-  #top .col-5-large,
-  #top .col-7-large,
-  #top .col-12-medium {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-  }
-
-  /* ensure the image block pushes the text down */
-  #top .col-4 {
-    margin-bottom: 2.75rem !important;
-  }
-
-  #top .image.fit {
-    margin: 0 auto !important;
-    max-width: 320px;
-  }
-
-  #top header,
-  #top p,
-  #top .button {
-    text-align: center;
-  }
-}
-/* Cap headshot height so it never overlaps header */
-@media screen and (max-width: 1200px) {
-  #top .image.fit {
-    max-width: 320px;
-  }
-
-  #top .image.fit img {
-    width: 320px !important;
-    height: 320px !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-  }
-
-  /* push text down below the image */
-  #top header {
-    margin-top: 1.5rem !important;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  #top .image.fit img {
-    width: 260px !important;
-    height: 260px !important;
-  }
-}
-/* === FINAL HERO HEADSHOT STYLES (OVAL, STABLE) === */
-@media screen and (max-width: 1200px) {
-  #top .image.fit {
-    max-width: 320px;
-    margin: 0 auto 2.75rem auto !important;
-  }
-
+  /* Oval headshot */
   #top .image.fit img {
     width: 100%;
     height: auto;
@@ -2565,21 +2480,32 @@ input, select, textarea {
     object-fit: cover;
   }
 
+  #top header,
+  #top p,
+  #top .button {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
   #top header {
     margin-top: 1.25rem !important;
   }
 }
 
+/* Phone sizing */
 @media screen and (max-width: 736px) {
-  #top .image.fit {
-    max-width: 260px;
-  }
+  #top .image.fit { max-width: 260px; }
 }
-/* Fine-tune headshot centering on mobile */
+
+/* iOS Safari: force true centering of hero headshot */
 @media screen and (max-width: 736px) {
   #top .image.fit {
-    margin-left: auto !important;
-    margin-right: auto !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
