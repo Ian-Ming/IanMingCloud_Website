@@ -2476,11 +2476,16 @@ input, select, textarea {
     max-width: 260px;
   }
 }
-/* Desktop: prevent hero image from dominating viewport */
-@media screen and (min-width: 981px) {
-  .hero-image {
-    max-width: 360px;
-  }
+/* Hard cap hero headshot on desktop + ensure it can't blow up */
+.hero-image {
+  max-width: 360px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero-image img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
 }
 
 
