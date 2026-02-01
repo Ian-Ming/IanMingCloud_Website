@@ -1,287 +1,115 @@
-<!DOCTYPE HTML>
-	<html lang="en">
-  		<head>
-    		<title>Ian Ming | Cloud Portfolio</title>
-    			<meta charset="utf-8">
-    			<meta name="viewport" content="width=device-width, initial-scale=1">
-    			<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    			<link rel="stylesheet" href="assets/css/main.css?v=20260122a">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ian Ming | Cloud Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
 
-  		</head>
-  			<body class="is-preload">
+    <style>
+        :root {
+            /* Modified Ifetayo Palette for a "Cloud/Azure" feel */
+            --bg-dark: #0b0220;
+            --azure-blue: #0078d4; /* Replaced Hot Pink for your branding */
+            --terminal-green: #00ff41;
+            --text-light: #f9f6ff;
+            --mono: "VT323", monospace;
+            --pixel: "Press Start 2P", monospace;
+        }
 
-		<!-- Nav -->
-		<nav id="nav">
-			<ul class="container">
-				<li><a href="#top">Top</a></li>
-				<li><a href="#work">Work</a></li>
-				<li><a href="#projects">Portfolio</a></li>
-				<li><a href="#resume">Resume</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
 
-		<!-- Home -->
-		<article id="top" class="wrapper style1">
-  			<div class="container hero-single">
-    			<span class="hero-image">
-     			 	<img src="images/Headshot.jpg" alt="Headshot of Ian Ming">
-    			</span>
+        /* Fixed Header from the file */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            backdrop-filter: blur(8px);
+            background: rgba(11, 2, 32, 0.7);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
 
-    			<header class="hero-header">
-      				<h1>Hi. I'm <strong>Ian Ming</strong>.</h1>
-    			</header>
+        /* Screen Switching Logic */
+        .screen {
+            display: none; /* Hidden by default */
+            padding: 100px 2rem 2rem;
+            min-height: 100vh;
+            animation: fadeIn 0.5s ease;
+        }
 
-    			<p class="hero-text">
-     				 Business and IT student with hands-on experience deploying and maintaining
-      				static websites using cloud-based workflows. Focused on translating
-      				business needs into practical technical solutions while building toward a
-      				career in cloud and IT operations.
-    			</p>
+        .screen.active {
+            display: block; /* Shown when active */
+        }
 
-    			<a href="#work" class="button large scrolly hero-button">
-      				Learn about what I do
-   			 	</a>
-  			</div>
-		</article>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
+        .terminal-text {
+            font-family: var(--mono);
+            color: var(--terminal-green);
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
 
-		<!-- Work -->
-		<article id="work" class="wrapper style2">
-			<div class="container">
-				<header>
-					<h2>What I do</h2>
-					<p>Cloud-first websites and infrastructure—built to be reliable,
-						maintainable, and easy to deploy.</p>
-				</header>
+<header>
+    <div class="logo" style="font-family: var(--pixel);">IAN_MING</div>
+    <nav>
+        <a href="#" onclick="showScreen('home')">HOME</a>
+        <a href="#" onclick="showScreen('projects')">PROJECTS</a>
+        <a href="#" onclick="showScreen('resume')">RESUME</a>
+    </nav>
+</header>
 
-				<div class="row aln-center">
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-cloud"></span>
-							<h3>Deployments & CI/CD</h3>
-							<p>GitHub Actions pipelines that automatically build and deploy changes
-								to Azure Static Web Apps with clean version control.</p>
-						</section>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-cogs"></span>
-							<h3>Cloud & IT Operations</h3>
-							<p>DNS, domains, SSL, monitoring basics, and troubleshooting—focused on
-								keeping systems stable and secure.</p>
-						</section>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-chart-bar"></span>
-							<h3>Consulting Mindset</h3>
-							<p>I translate business needs into practical technical solutions—scoping,
-								documenting, and improving processes.</p>
-						</section>
-					</div>
-				</div>
-				<footer>
-					<p>Want the details? Check out the projects below.</p>
-					<a href="#projects" class="button large scrolly">See my projects</a>
-				</footer>
-			</div>
-		</article>
+<main>
+    <section id="home" class="screen active">
+        <h1 style="font-family: var(--pixel); color: var(--azure-blue);">Hi. I'm Ian Ming.</h1>
+        <p class="terminal-text">> cloud_infrastructure_status: operational</p>
+        <p>I build and deploy reliable, low-cost cloud solutions using Azure and GitHub Actions.</p>
+    </section>
 
-		<!-- Portfolio -->
-		<article id="projects" class="wrapper style3">
-  			<div class="container">
-    			<header>
-      				<h2>Projects</h2>
-      				<p>Hands-on builds focused on Azure, automation, and real deployment workflows.</p>
-    			</header>
+    <section id="projects" class="screen">
+        <h2 style="font-family: var(--pixel);">Cloud Deployments</h2>
+        <div class="project-card">
+            <h3>Azure Resume Challenge</h3>
+            <p>Deployed this site using CI/CD via GitHub Actions to Azure Static Web Apps.</p>
+        </div>
+    </section>
 
-    			<div class="row">
-      				<div class="col-4 col-6-medium col-12-small">
-        				<article class="box style2">
-          					<a href="https://github.com/Ian-Ming/pr8ttyming_website.git" class="image featured">
-            					<img src="images/pic01.jpg" alt="IanMingCloud Portfolio on Azure" />
-          					</a>
-          					<h3><a href="https://github.com/Ian-Ming/pr8ttyming_website.git">Azure Static Web App Portfolio</a></h3>
-          					<p>Designed and deployed a cloud-hosted personal portfolio using a static web architecture.</p>
-        				</article>
-      				</div>
+    <section id="resume" class="screen">
+        <h2 style="font-family: var(--pixel);">Experience</h2>
+        <div class="exp-item">
+            <h4>University of Maryland – IT Intern</h4>
+            <p>Supported desktop maintenance and hardware troubleshooting.</p>
+        </div>
+    </section>
+</main>
 
-      				<div class="col-4 col-6-medium col-12-small">
-        				<article class="box style2">
-          					<a href="#" class="image featured">
-            					<img src="images/pic02.jpg" alt="" />
-          					</a>
-          					<h3><a href="#">Small Business Website Delivery Workflow</a></h3>
-          					<p>Structured process for delivering static websites from requirements to deployment.</p>
-        				</article>
-      				</div>
-    			</div>
+<script>
+    // The core function from Ifetayo's file to handle screen switching
+    function showScreen(screenId) {
+        // Hide all screens
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        // Show selected screen
+        document.getElementById(screenId).classList.add('active');
+        
+        // Optional: Play a click sound like the original
+        console.log("Navigated to: " + screenId);
+    }
+</script>
 
-    			<footer>
-      				<a href="#contact" class="button large scrolly">Get in touch with me</a>
-    			</footer>
-  			</div>
-		</article>
-
-
-			<!-- Resume Highlights -->
-	<article id="resume" class="wrapper style2">
-  		<div class="container">
-    	<header>
-      		<h2>Resume Highlights</h2>
-      		<p>I’m building my career in cloud and IT operations, with hands-on experience deploying sites, setting up automation, and supporting real-world operations.</p>
-    	</header>
-
-    <!-- Row 1: three highlight cards -->
-    <div class="row aln-center">
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1">
-          <span class="icon solid featured fa-cloud"></span>
-          <h3>Cloud & Automation</h3>
-          <p>Azure fundamentals, static web hosting, custom domains/DNS, and GitHub Actions for CI/CD.</p>
-        </section>
-      </div>
-
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1">
-          <span class="icon solid featured fa-users"></span>
-          <h3>Client-Facing Execution</h3>
-          <p>Comfortable translating needs into solutions—documenting, communicating updates, and delivering on timelines.</p>
-        </section>
-      </div>
-
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1">
-          <span class="icon solid featured fa-briefcase"></span>
-          <h3>Operations Mindset</h3>
-          <p>Detail-oriented, reliable, and process-driven—focused on stability, safety, and continuous improvement.</p>
-        </section>
-      </div>
-    </div>
-
-    <!-- Row 2: tools + focus -->
-    <div class="row">
-      <div class="col-6 col-12-medium">
-        <section class="box style1">
-          <h3>Tools & Technologies</h3>
-          <p>Azure Static Web Apps • Azure DNS • GitHub Actions • Git/GitHub • HTML/CSS • Basic networking/DNS • Windows/macOS troubleshooting</p>
-        </section>
-      </div>
-
-      <div class="col-6 col-12-medium">
-        <section class="box style1">
-          <h3>Focus Areas</h3>
-          <p>Cloud/IT Operations • CI/CD automation • Reliable web hosting • Documentation • Client communication • Process improvement</p>
-        </section>
-      </div>
-    </div>
-
-    <!-- Row 3: experience -->
-    <div class="row">
-      <div class="col-12">
-        <section class="box style1">
-          <h3>Experience Highlights</h3>
-          <ul>
-            <li><strong>University of Maryland – IT Intern:</strong> Supported desktop maintenance and basic IT operations, including hardware replacement and troubleshooting; gained early exposure to coding and technical project work.</li>
-            <li><strong>Lowe’s – Sales Associate (Hardware & Tools):</strong> Customer-facing role focused on explaining technical products clearly, ensuring safe usage, resolving issues, and maintaining high satisfaction—experience directly applicable to client-facing IT support and consulting.</li>
-            <li><strong>Winkler Pool Management &amp; M-NCPPC – Pool Service Technician / Lifeguard:</strong> Operations-focused role responsible for safety, sanitation standards, and reliability across multiple facilities and private properties in the DMV and Chesapeake Bay area.</li>
-            <li><strong>Xfinity Center &amp; UMD Diner – Food Service:</strong> Worked in high-volume environments with strict cleanliness, safety, and operational standards—experience in following procedures and performing under pressure.</li>
-          </ul>
-        </section>
-      </div>
-    </div>
-
-    <footer>
-      <p>Download my full resume or reach out to connect.</p>
-      <a href="assets/Ian-Ming-Resume.pdf" class="button" target="_blank" rel="noopener">Download Resume (PDF)</a>
-      <a href="#contact" class="button large scrolly">Contact Me</a>
-    </footer>
-  </div>
-</article>
-
-
-							<!-- Contact -->
-							<article id="contact" class="wrapper style4">
-								<div class="container medium">
-									<header>
-										<h2>Let’s Connect</h2>
-										<p>I’m open to entry-level opportunities in cloud, IT operations, and business technology, as well as select small business web projects.
-											 If you’re interested in working together or starting a conversation, feel free to reach out.</p>
-									</header>
-									<div class="row">
-										<div class="col-12">
-											<p id="form-status" style="display:none; margin-bottom: 1rem;"> Thanks — your message was sent. I’ll get back to you soon.</p>
-											<form method="POST" action="https://formspree.io/f/mdaavpkn">
-
-  												<input type="hidden" name="_subject" value="New message from ianmingcloud.com" />
-  												<input type="hidden" name="_captcha" value="false" />
-												<input type="hidden" name="_next" value="https://ianmingcloud.com/#contact?success=1" />
-
-  												<div class="row">
-    												<div class="col-6 col-12-small">
-      													<input type="text" name="name" placeholder="Name" required />
-   													</div>
-
-    												<div class="col-6 col-12-small">
-      													<input type="email" name="email" placeholder="Email" required />
-    												</div>
-
-    												<div class="col-12">
-      													<input type="text" name="subject" placeholder="Subject" />
-    												</div>
-
-    												<div class="col-12">
-      													<textarea name="message" placeholder="Message" required></textarea>
-    												</div>
-
-    												<div class="col-12">
-      													<ul class="actions">
-        													<li><button type="submit">Send Message</button></li>
-        													<li><input type="reset" value="Clear Form" class="alt" /></li>
-      													</ul>
-    												</div>
-  												</div>
-											</form>
-										</div>
-										<div class="col-12">
-											<hr />
-											<h3>Find me on ...</h3>
-											<ul class="social">
-												<li><a href="#" class="icon brands fa-facebook-f"><span
-															class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span
-															class="label">LinkedIn</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span
-															class="label">Github</span></a></li>
-											</ul>
-											<hr />
-										</div>
-									</div>
-									<footer>
-										<ul id="copyright">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a
-													href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</footer>
-								</div>
-							</article>
-
-							<!-- Scripts -->
-							<script src="assets/js/jquery.min.js"></script>
-							<script src="assets/js/jquery.scrolly.min.js"></script>
-							<script src="assets/js/browser.min.js"></script>
-							<script src="assets/js/breakpoints.min.js"></script>
-							<script src="assets/js/util.js"></script>
-							<script src="assets/js/main.js" defer></script>
-
-							<script>
-  							// Show success message after Formspree redirect
-  							if (window.location.search.includes("success")) {
-    						const status = document.getElementById("form-status");
-    						if (status) status.style.display = "block";
-  							}
-  							</script>
-
-						</body>
-	</html>
+</body>
+</html>
