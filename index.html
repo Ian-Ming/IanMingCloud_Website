@@ -1,115 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Ian Ming | Cloud Portfolio</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            /* Modified Ifetayo Palette for a "Cloud/Azure" feel */
-            --bg-dark: #0b0220;
-            --azure-blue: #0078d4; /* Replaced Hot Pink for your branding */
-            --terminal-green: #00ff41;
-            --text-light: #f9f6ff;
-            --mono: "VT323", monospace;
-            --pixel: "Press Start 2P", monospace;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* Fixed Header from the file */
-        header {
-            position: fixed;
-            top: 0; width: 100%;
-            backdrop-filter: blur(8px);
-            background: rgba(11, 2, 32, 0.7);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Screen Switching Logic */
-        .screen {
-            display: none; /* Hidden by default */
-            padding: 100px 2rem 2rem;
-            min-height: 100vh;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .screen.active {
-            display: block; /* Shown when active */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .terminal-text {
-            font-family: var(--mono);
-            color: var(--terminal-green);
-            font-size: 1.5rem;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hi, I am Ian Ming</title>
 </head>
 <body>
+  <nav>
+    <div class="Logo">Ming's Portfolio</div>
+    <div class="nav-links">
+        <a href="#" onclick="showSection('home-view')">Home</a>
+        <a href="#" onclick="showSection('education-view')">Education</a>
+        <a href="#" onclick="showSection('experience-view')">Experience</a>
+        <a href="#" onclick="showSection('accomplishments-view')">Accomplishments</a>
+    </div>
+  </nav>
+  <main>
+    <!-- HOME -->
+    <section>
+        <div class="container">
+                <div class="profile-side">
+                    <img src="https://via.placeholder.com/300" class="profile-pic" alt="Ian Ming">
+                    <h3>Connect with me</h3>
+                    <div class="social-links">
+                        <a href="#" class="card">Contact</a>
+                        <a href="#" class="card">GitHub</a>
+                        <a href="#" class="card">Linkedin</a>
+                        <a href="#" class="card">Resume</a>
+                    </div>
+                </div>
+            <div class="content-side"> 
+                <div id="home-view" class="view-section active">
+                    <div class="card bio-card">
+                        <h1>Ian Ming</h1>
+                        <div class="uni-subhead"> Business Administration • York University (2026) </div>
+                            <p> Ian Ming is Business and IT student with hands-on experience
+                            deploying and maintaining static websites using cloud-based workflows.
+                            Focused on translating business needs into practical technical solutions
+                            while building toward a career in cloud and IT operations.</p>
+                        </div>
+                    <div class="card skills-card">
+                        <h3>Technical Skills & Software</h3>
+                        <div class="pill-container">
+                            <span>Python</span>
+                            <span>Git</span>
+                            <span>HTML</span>
+                        </div>
+                    </div>
+                    <div class="card tools-card">
+                        <h3>Tools</h3>
+                        <div class="pill-container">
+                            <span>VScode</span>
+                            <span>Bash</span>
+                            <span>Excel</span>
+                            <span>Azure</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="education-view" class="view-section">
+                    <div class="card">
+                        <h3>Education</h3>
+                        <p>Business Administration Degree 2026 </p>
+                    </div>
+                    </div>
+                <div id="experience-view" class="view-section">
+                    <div class="card">
+                        <h3>Experience</h3>
+                        <P>Projects Ive completed in class, "intelliHeat" "consulting project"</P>
+                    </div>
+                </div>
+                <div id="accomplishments-view" class="view-section">
+                    <div class="card">
+                        <h3>Accomplishments</h3>
+                        <p>Basketball, NSBE, Weightlifting, etc</p>
+                    </div>
+                </div>
 
-<header>
-    <div class="logo" style="font-family: var(--pixel);">IAN_MING</div>
-    <nav>
-        <a href="#" onclick="showScreen('home')">HOME</a>
-        <a href="#" onclick="showScreen('projects')">PROJECTS</a>
-        <a href="#" onclick="showScreen('resume')">RESUME</a>
-    </nav>
-</header>
-
-<main>
-    <section id="home" class="screen active">
-        <h1 style="font-family: var(--pixel); color: var(--azure-blue);">Hi. I'm Ian Ming.</h1>
-        <p class="terminal-text">> cloud_infrastructure_status: operational</p>
-        <p>I build and deploy reliable, low-cost cloud solutions using Azure and GitHub Actions.</p>
-    </section>
-
-    <section id="projects" class="screen">
-        <h2 style="font-family: var(--pixel);">Cloud Deployments</h2>
-        <div class="project-card">
-            <h3>Azure Resume Challenge</h3>
-            <p>Deployed this site using CI/CD via GitHub Actions to Azure Static Web Apps.</p>
+            </div>
         </div>
     </section>
+    
+  </main>
 
-    <section id="resume" class="screen">
-        <h2 style="font-family: var(--pixel);">Experience</h2>
-        <div class="exp-item">
-            <h4>University of Maryland – IT Intern</h4>
-            <p>Supported desktop maintenance and hardware troubleshooting.</p>
-        </div>
-    </section>
-</main>
+  <script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.view-section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
 
-<script>
-    // The core function from Ifetayo's file to handle screen switching
-    function showScreen(screenId) {
-        // Hide all screens
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        // Show selected screen
-        document.getElementById(screenId).classList.add('active');
-        
-        // Optional: Play a click sound like the original
-        console.log("Navigated to: " + screenId);
+        const target = document.getElementById(sectionId);
+        if (target) {
+            target.classList.add('active');
+        }
     }
-</script>
+
+  </script>
 
 </body>
 </html>
