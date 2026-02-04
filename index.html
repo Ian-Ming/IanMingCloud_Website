@@ -111,13 +111,12 @@ btn.addEventListener('click', () => {
 });
 
 // This tells the browser to go talk to your Python API
-fetch('ianmingcloudvisitcounter-ewd0cjbgb4gdbmhs.centralus-01.azurewebsites.net')
-    .then(response => response.json()) // Translate the JSON
+fetch('https://ianmingcloudvisitcounter-ewd0cjbgb4gdbmhs.centralus-01.azurewebsites.net/api/visitor_counter')
+    .then(res => res.json())
     .then(data => {
-        // Find the span and update the text with the number from Python
         document.getElementById('counter-display').innerText = data.count;
     })
-    .catch(err => console.error("Counter failed:", err));
+    .catch(err => console.error("Final hurdle error:", err));
   </script>
 
 </body>
