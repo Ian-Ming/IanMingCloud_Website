@@ -16,6 +16,7 @@
         <a href="#" onclick="showSection('projects-view')">Projects</a>
         <a href="#" onclick="showSection('accomplishments-view')">Accomplishments</a>
         <button id="theme-toggle">🌓 Toggle Theme</button>
+        <p>Visitor Count: <span id="counter-display">Loading...</span></p>
     </div>
   </nav>
   <main>
@@ -109,11 +110,14 @@ btn.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
 });
 
-fetch('https://your-azure-function-url.com/api/visitorcounter')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('counter-display').innerText = data;
-  });
+// This tells the browser to go talk to your Python API
+fetch('ianmingcloudvisitcounter-ewd0cjbgb4gdbmhs.centralus-01.azurewebsites.net')
+    .then(response => response.json()) // Translate the JSON
+    .then(data => {
+        // Find the span and update the text with the number from Python
+        document.getElementById('counter-display').innerText = data.count;
+    })
+    .catch(err => console.error("Counter failed:", err));
   </script>
 
 </body>
