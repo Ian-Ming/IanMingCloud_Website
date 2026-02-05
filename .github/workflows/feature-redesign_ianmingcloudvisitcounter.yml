@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Python project to Azure Function App - IanMingCloudVisitCounter
+name: Build and deploy Python project to Azure Function App
 
 on:
   push:
@@ -15,41 +12,34 @@ env:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-
     steps:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v4
 
-      - name: 'Setup Python ${{ env.PYTHON_VERSION }} Environment'
+      - name: 'Setup Python ${{ env.PYTHON_VERSION }}'
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      # --- THE FIX: Manually build the library package ---
+      # --- THE CRITICAL FIX: MANUALLY INSTALL LIBRARIES ---
       - name: 'Install dependencies locally'
         run: |
           pushd './api'
           python -m pip install --target=".python_packages/lib/site-packages" -r requirements.txt
           popd
-      # ---------------------------------------------------
 
       - name: 'Login to Azure'
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D105B30D603941248514E159026EA9D4 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_5F765BD0F9B8406392FB4FF2F2894B39 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_548F59C063264C01B682DB4F04F23C70 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_... }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_... }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_... }}
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
-        id: deploy-to-function
         with:
           app-name: 'IanMingCloudVisitCounter'
-          slot-name: 'Production'
           package: './api'
-          # We keep these as backup, but the local install above is our primary fix
-          scm-do-build-during-deployment: true
-          enable-oryx-build: true
+          # We manually built it, so we tell Azure "I already did the work"
+          scm-do-build-during-deployment: false 
+          enable-oryx-build: false
