@@ -182,7 +182,31 @@ nav {
     }
 }
 
+.timeline-item {
+    border-left: 2px solid var(--primary-color);
+    padding-left: 25px;
+    margin-bottom: 30px;
+    position: relative;
+}
 
+.timeline-item::before {
+    content: '🌸'; /* The Sakura node */
+    position: absolute;
+    left: -13px;
+    top: 0;
+    font-size: 1rem;
+    filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.timeline-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: circle;
+}
+
+.timeline-item h3 {
+    margin-bottom: 5px;
+}
 
 
 /* Animations */
