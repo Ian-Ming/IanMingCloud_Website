@@ -16,124 +16,118 @@
         <a href="#" onclick="showSection('education-view')">Education</a>
         <a href="#" onclick="showSection('experience-view')">Experience</a>
         <a href="#" onclick="showSection('projects-view')">Projects</a>
-        <a href="#" onclick="showSection('Get To Know Me-view')">Get To Know Me</a>
+        <a href="#" onclick="showSection('get-to-know-me-view')">Get To Know Me</a>
         <button id="theme-toggle">🌓 Toggle Theme</button>
         <p>Visitor Count: <span id="counter-display">Loading...</span></p>
     </div>
   </nav>
+
   <main>
-    <!-- HOME -->
-    <section>
-        <div class="container">
-                <div class="profile-side">
-                    <img src="images/headshot.png" class="profile-pic" alt="Ian Ming">
-                    <h3>Connect with me</h3>
-                    <div class="social-links">
-                        <a href="https://ianming.carrd.co/" class="card">Contact</a>
-                        <a href="https://github.com/Ian-Ming" class="card">GitHub</a>
-                        <a href="www.linkedin.com/in/ian-ming-153722285" class="card">Linkedin</a>
-                        <a href="https://docs.google.com/document/d/e/2PACX-1vQkZy1NtyUkN0cnsFIsF57paD9LYkovisSKOX5xjRTQcfuAWTR7_eeKwZM_IYFq7qmcZ0Qus7Se-fnQ/pub" class="card">Resume</a>
+    <section class="container">
+        <div class="profile-side">
+            <img src="images/headshot.png" class="profile-pic" alt="Ian Ming">
+            <h3>Connect with me</h3>
+            <div class="social-links">
+                <a href="https://ianming.carrd.co/" class="card" target="_blank">Contact</a>
+                <a href="https://github.com/Ian-Ming" class="card" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/ian-ming-153722285" class="card" target="_blank">Linkedin</a>
+                <a href="https://docs.google.com/document/d/e/2PACX-1vQkZy1NtyUkN0cnsFIsF57paD9LYkovisSKOX5xjRTQcfuAWTR7_eeKwZM_IYFq7qmcZ0Qus7Se-fnQ/pub" class="card" target="_blank">Resume</a>
+            </div>
+        </div>
+
+        <div class="content-side"> 
+            <div id="home-view" class="view-section active">
+                <div class="card bio-card">
+                    <h1>Ian Ming</h1>
+                    <div class="uni-subhead"> Business Administration • York University (2026) </div>
+                    <p> Ian Ming is Business and IT student with hands-on experience deploying and maintaining static websites using cloud-based workflows. Focused on translating business needs into practical technical solutions while building toward a career in cloud and IT operations.</p>
+                </div>
+                <div class="card skills-card">
+                    <h3>Technical Skills & Software</h3>
+                    <div class="pill-container">
+                        <span>Python</span>
+                        <span>Git</span>
+                        <span>HTML</span>
                     </div>
                 </div>
-            <div class="content-side"> 
-                <div id="home-view" class="view-section active">
-                    <div class="card bio-card">
-                        <h1>Ian Ming</h1>
-                        <div class="uni-subhead"> Business Administration • York University (2026) </div>
-                            <p> Ian Ming is Business and IT student with hands-on experience
-                            deploying and maintaining static websites using cloud-based workflows.
-                            Focused on translating business needs into practical technical solutions
-                            while building toward a career in cloud and IT operations.</p>
-                        </div>
-                    <div class="card skills-card">
-                        <h3>Technical Skills & Software</h3>
-                        <div class="pill-container">
-                            <span>Python</span>
-                            <span>Git</span>
-                            <span>HTML</span>
-                        </div>
+                <div class="card tools-card">
+                    <h3>Tools</h3>
+                    <div class="pill-container">
+                        <span>VScode</span>
+                        <span>Bash</span>
+                        <span>Excel</span>
+                        <span>Azure</span>
                     </div>
-                    <div class="card tools-card">
-                        <h3>Tools</h3>
-                        <div class="pill-container">
-                            <span>VScode</span>
-                            <span>Bash</span>
-                            <span>Excel</span>
-                            <span>Azure</span>
+                </div>
+            </div>
+
+            <div id="education-view" class="view-section">
+                <div class="card">
+                    <h2>Education</h2>
+                    <div class="content-block">
+                        <h3>York University</h3>
+                        <div class="uni-subhead">Bachelor of Business Administration • 2026</div>
+                        <p>Focusing on Business Operations and Information Technology. Bridging the gap between corporate strategy and technical cloud implementation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="experience-view" class="view-section">
+                <div class="card">
+                    <h2>Experience</h2>
+                    <div class="content-block">
+                        <h3>Cloud Resume Challenge</h3>
+                        <div class="uni-subhead">Azure / Python / GitHub Actions</div>
+                        <ul>
+                            <li>Developed a serverless visitor counter using Python v2 Azure Functions.</li>
+                            <li>Automated deployment with GitHub Actions CI/CD pipelines.</li>
+                            <li>Configured Cosmos DB for real-time data persistence.</li>
+                        </ul>
+                    </div>
+                    <div class="content-block">
+                        <h3>Consulting & IntelliHeat Projects</h3>
+                        <div class="uni-subhead">IT Strategy & Operations</div>
+                        <ul>
+                            <li>Analyzed business needs to design practical technical solutions.</li>
+                            <li>Managed deployment workflows for static web assets.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="projects-view" class="view-section">
+                <div class="card">
+                    <h2>Projects</h2>
+                    <div class="content-block">
+                        <h3>Serverless Visitor Counter</h3>
+                        <p>Full-stack cloud application featuring a custom API and NoSQL database integration.</p>
+                    </div>
+                    <div class="content-block">
+                        <h3>CI/CD Infrastructure Pipeline</h3>
+                        <p>Automated workflow for syncing local development code to Azure Static Web Apps.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="get-to-know-me-view" class="view-section">
+                <div class="card">
+                    <h2>Get to Know Me</h2>
+                    <div class="info-grid">
+                        <div class="content-block">
+                            <h3>Athletics</h3>
+                            <p>Experience in team-based basketball, focusing on communication and discipline.</p>
+                        </div>
+                        <div class="content-block">
+                            <h3>Interests</h3>
+                            <p>Dedicated to weightlifting and continuous personal growth through NSBE involvement.</p>
                         </div>
                     </div>
                 </div>
-                <div id="education-view" class="view-section">
-    <div class="card">
-        <h2>Education</h2>
-        <div class="content-block">
-            <h3>York University</h3>
-            <div class="uni-subhead">Bachelor of Business Administration • 2026</div>
-            <p>Focusing on Business Operations and Information Technology. Bridging the gap between corporate strategy and technical cloud implementation.</p>
-        </div>
-    </div>
-</div>
-
-<div id="experience-view" class="view-section">
-    <div class="card">
-        <h2>Experience</h2>
-        <div class="content-block">
-            <h3>Cloud Resume Challenge</h3>
-            <div class="uni-subhead">Azure / Python / GitHub Actions</div>
-            <ul>
-                <li>Developed a serverless visitor counter using Python v2 Azure Functions.</li>
-                <li>Automated deployment with GitHub Actions CI/CD pipelines.</li>
-                <li>Configured Cosmos DB for real-time data persistence.</li>
-            </ul>
-        </div>
-        <div class="content-block">
-            <h3>Consulting & IntelliHeat Projects</h3>
-            <div class="uni-subhead">IT Strategy & Operations</div>
-            <ul>
-                <li>Analyzed business needs to design practical technical solutions.</li>
-                <li>Managed deployment workflows for static web assets.</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div id="projects-view" class="view-section">
-    <div class="card">
-        <h2>Projects</h2>
-        <div class="content-block">
-            <h3>Serverless Visitor Counter</h3>
-            <p>Full-stack cloud application featuring a custom API and NoSQL database integration.</p>
-        </div>
-        <div class="content-block">
-            <h3>CI/CD Infrastructure Pipeline</h3>
-            <p>Automated workflow for syncing local development code to Azure Static Web Apps.</p>
-        </div>
-    </div>
-</div>
-
-<div id="get-to-know-me-view" class="view-section">
-    <div class="card">
-        <h2>Get to Know Me</h2>
-        <div class="info-grid">
-            <div class="content-block">
-                <h3>Athletics</h3>
-                <p>Experience in team-based basketball, focusing on communication and discipline.</p>
             </div>
-            <div class="content-block">
-                <h3>Interests</h3>
-                <p>Dedicated to weightlifting and continuous personal growth through NSBE involvement.</p>
-            </div>
-        </div>
-    </div>
-</div>
-            </div>
-        </div>
-    </section>
-    
+        </div> </section>
   </main>
 
   <script>
-// This is showing active screen and hiding other screens
     function showSection(sectionId) {
         const sections = document.querySelectorAll('.view-section');
         sections.forEach(section => {
@@ -146,53 +140,23 @@
         }
     }
 
-// This tells the browser to go talk to your Python API
-fetch('https://ianmingcloudvisitcounter-ewd0cjbgb4gdbmhs.centralus-01.azurewebsites.net/api/visitor_counter')
-    .then(res => res.json())
-    .then(data => {
-        document.getElementById('counter-display').innerText = data.count;
-    })
-    .catch(err => console.error("Final hurdle error:", err));
-// 1. Theme Toggle Logic
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+    fetch('https://ianmingcloudvisitcounter-ewd0cjbgb4gdbmhs.centralus-01.azurewebsites.net/api/visitor_counter')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('counter-display').innerText = data.count;
+        })
+        .catch(err => console.error("Counter error:", err));
 
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    const isLight = body.classList.contains('light-mode');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-});
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
 
-// Load saved theme
-if (localStorage.getItem('theme') === 'light') {
-    body.classList.add('light-mode');
-}
-
-// 2. Sakura Cursor Trail
-document.addEventListener('mousemove', function(e) {
-    // Check if it's a touch device or if the screen is too small
-    if (window.innerWidth < 850 || Math.random() > 0.15) return; 
-    
-    const petal = document.createElement('div');
-    petal.className = 'cursor-petal';
-    petal.innerHTML = '🌸';
-    petal.style.left = e.pageX + 'px';
-    petal.style.top = e.pageY + 'px';
-    
-    document.body.appendChild(petal);
-    
-    // Animate the petal drifting down and rotating
-    setTimeout(() => {
-        petal.style.transform = `translate(${(Math.random() - 0.5) * 100}px, 100px) rotate(${Math.random() * 360}deg)`;
-        petal.style.opacity = '0';
-    }, 10);
-    
-    // Clean up
-    setTimeout(() => {
-        petal.remove();
-    }, 1000);
-});
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+    }
   </script>
-
 </body>
 </html>
