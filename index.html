@@ -132,7 +132,8 @@ if (localStorage.getItem('theme') === 'light') {
 
 // 2. Sakura Cursor Trail
 document.addEventListener('mousemove', function(e) {
-    if (Math.random() > 0.15) return; // Only spawn petals occasionally for performance
+    // Check if it's a touch device or if the screen is too small
+    if (window.innerWidth < 850 || Math.random() > 0.15) return; 
     
     const petal = document.createElement('div');
     petal.className = 'cursor-petal';

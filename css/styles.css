@@ -132,7 +132,62 @@ nav {
 
 .nav-logo { font-size: 1.5rem; font-weight: 900; color: var(--text-heading); }
 
+/* --- RESPONSIVE MOBILE VIEW --- */
+@media (max-width: 850px) {
+    /* 1. Stack the grid into one column */
+    .container {
+        grid-template-columns: 1fr; 
+        margin-top: 20px;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    /* 2. Center the profile section */
+    .profile-side {
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-pic {
+        max-width: 250px; /* Keep the headshot a reasonable size on mobile */
+        margin: 0 auto;
+    }
+
+    .social-links {
+        width: 100%;
+        max-width: 300px; /* Don't let buttons stretch too wide */
+    }
+
+    /* 3. Make the Navigation stackable */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Let links wrap if there are too many */
+        justify-content: center;
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+
+    /* 4. Fix content side alignment */
+    .content-side {
+        width: 100%;
+    }
+
+    .card {
+        padding: 1.5rem; /* Slightly less padding for small screens */
+    }
+}
+
+
+
+
 /* Animations */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-.cursor-petal { position: absolute; pointer-events: none; z-index: 9999; }
+.cursor-petal { position: absolute; pointer-events: none; z-index: 9999;
+}
+
