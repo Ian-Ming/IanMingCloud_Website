@@ -117,6 +117,19 @@ nav {
     border: 2px solid var(--border-color);
 }
 
+.profile-side h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border-color);
+    display: block;
+    text-align: center;
+}
+
 .card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
