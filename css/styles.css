@@ -298,48 +298,47 @@ nav {
     color: #2dd4bf;
     border-color: rgba(45, 212, 191, 0.2);
 }
-/* --- MOBILE --- */
-/* Mobile Responsiveness Fix */
-@media (max-width: 768px) {
-    
-    /* 1. Fix the Header/Logo */
-    header {
-        display: block !important; /* Forces vertical stacking */
-        text-align: center;
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 850px) {
+    /* 1. Fix the Header and Nav */
+    nav {
+        flex-direction: column; /* Stacks Logo, Links, and Counter */
+        padding: 1.5rem 10px;
+        height: auto;
     }
 
-    .logo {
-        font-size: 1.5rem; /* Shrink the 'Ming's Portfolio' text so it fits */
-        margin-bottom: 15px;
-    }
-
-    /* 2. Fix the Navigation Links */
-    nav ul {
-        display: flex;
-        flex-direction: column; /* Stack 'Experience', 'Projects', etc. vertically */
+    .nav-links {
+        flex-direction: column;
         gap: 10px;
-        padding: 0;
+        margin: 15px 0;
     }
 
-    /* 3. Fix the "Get to Know Me" Grid */
-    .hobby-grid, .split-grid {
-        display: block !important; /* Stack your square cards vertically */
-    }
-
-    .hobby-card, .info-block {
+    /* 2. THE BIG FIX: Stack the main layout */
+    .container {
+        grid-template-columns: 1fr; /* Forces profile on top, content on bottom */
+        margin: 20px auto;
+        gap: 20px;
         width: 100%;
-        margin-bottom: 20px;
-        aspect-ratio: auto; /* Remove the square ratio on mobile so text doesn't overflow */
     }
 
-    /* 4. Fix the Headshot & Info */
-    .profile-container {
-        display: block;
-        text-align: center;
+    /* 3. Make sure cards take full width */
+    .profile-side, .view-section {
+        width: 100%;
     }
 
-    .profile-img {
-        width: 80%; /* Don't let the photo take up the whole screen width */
-        margin: 0 auto 20px auto;
+    .profile-pic {
+        width: 250px; /* Stop the photo from being giant */
+        margin: 0 auto;
+    }
+
+    /* 4. Fix the Hobby Squares so text doesn't overflow */
+    .hobby-card.personal-vibe {
+        aspect-ratio: auto; /* Remove 1:1 ratio so text can breathe */
+        min-height: 250px;
+    }
+
+    /* 5. Stretch the grids */
+    .projects-grid, .experience-grid, .hobby-grid {
+        grid-template-columns: 1fr; /* Single column for all grid items */
     }
 }
