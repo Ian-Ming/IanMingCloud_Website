@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <title>Ian Ming's Portfolio</title>
 </head>
 <body>
-  <nav>
-    <div class="nav-logo">
-        <span class="pagoda-icon">⛩️</span> MING's Portfolio
-    </div>
-    <div class="nav-links">
-        <a href="#" onclick="showSection('home-view')">Home</a>
-        <a href="#" onclick="showSection('education-view')">Education</a>
-        <a href="#" onclick="showSection('experience-view')">Experience</a>
-        <a href="#" onclick="showSection('projects-view')">Projects</a>
-        <a href="#" onclick="showSection('get-to-know-me-view')">Get To Know Me</a>
-        <button id="theme-toggle" title="Toggle Dark/Light Mode"><span class="mode-icon">🌓</span></button>
-        <p>Visitor Count: <span id="counter-display">Loading...</span></p>
-    </div>
-  </nav>
+  <header>
+    <nav>
+        <div class="nav-logo">
+            <span class="pagoda-icon">⛩️</span> MING's Portfolio
+        </div>
 
+        <div class="nav-links">
+            <a href="#" onclick="showSection('home-view')">Home</a>
+            <a href="#" onclick="showSection('education-view')">Education</a>
+            <a href="#" onclick="showSection('experience-view')">Experience</a>
+            <a href="#" onclick="showSection('projects-view')">Projects</a>
+            <a href="#" onclick="showSection('get-to-know-me-view')">Get To Know Me</a>
+        </div>
+
+        <div class="nav-utils">
+            <button id="theme-toggle" title="Toggle Mode">🌓</button>
+            <div class="visitor-counter">
+                VC: <span id="counter-display">...</span>
+            </div>
+        </div>
+    </nav>
+</header>
   <main>
     <section class="container">
         <div class="profile-side">

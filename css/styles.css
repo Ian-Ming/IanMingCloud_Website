@@ -49,8 +49,8 @@ nav {
 .nav-logo {
     font-family: var(--font-heading);
     font-weight: 900;
-    font-size: 1.8rem;
-    letter-spacing: 4px;
+    font-size: 1.5rem; /* Sized down slightly from 1.8rem to fit mobile better */
+    letter-spacing: 2px;
     color: var(--text-heading);
 }
 
@@ -60,12 +60,27 @@ nav {
 .nav-links a { text-decoration: none; color: var(--text-body); font-size: 0.9rem; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary-color); }
 
+/* Keep your theme toggle exactly as is! */
 #theme-toggle {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--primary-color);
     width: 40px; height: 40px; border-radius: 50%;
     cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+
+/* Add this to handle the new utility bucket */
+.nav-utils {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.visitor-counter {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    white-space: nowrap;
 }
 
 /* --- MAIN LAYOUT --- */
@@ -300,45 +315,72 @@ nav {
 }
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 850px) {
-    /* 1. Fix the Header and Nav */
+    
+    /* 1. UPDATED: The "Ifetayo" Header Fix */
     nav {
-        flex-direction: column; /* Stacks Logo, Links, and Counter */
-        padding: 1.5rem 10px;
+        flex-wrap: wrap; /* Allows the nav-links bucket to wrap to a new line */
+        padding: 10px 15px !important;
+        flex-direction: row !important; /* Keep Logo and Utils on one line */
         height: auto;
     }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        margin: 15px 0;
+    .nav-logo {
+        font-size: 1.1rem !important;
+        flex: 1; /* Pushes the utility bucket to the right */
     }
 
-    /* 2. THE BIG FIX: Stack the main layout */
+    .nav-utils {
+        order: 2; /* Keeps the toggle and counter at the top right */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-links {
+        order: 3; /* Forces the menu links to drop to the next line underneath */
+        width: 100%;
+        flex-direction: row !important; /* Keep links side-by-side */
+        flex-wrap: wrap; /* But let them wrap if they run out of space */
+        justify-content: center;
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border-color);
+        gap: 10px !important;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem !important;
+        background: rgba(230, 57, 70, 0.05); /* Tappable button feel */
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    /* 2. KEEP: THE BIG FIX: Stack the main layout */
     .container {
-        grid-template-columns: 1fr; /* Forces profile on top, content on bottom */
+        grid-template-columns: 1fr; 
         margin: 20px auto;
         gap: 20px;
         width: 100%;
     }
 
-    /* 3. Make sure cards take full width */
+    /* 3. KEEP: Make sure cards take full width */
     .profile-side, .view-section {
         width: 100%;
     }
 
     .profile-pic {
-        width: 250px; /* Stop the photo from being giant */
+        width: 250px; 
         margin: 0 auto;
     }
 
-    /* 4. Fix the Hobby Squares so text doesn't overflow */
+    /* 4. KEEP: Fix the Hobby Squares so text doesn't overflow */
     .hobby-card.personal-vibe {
-        aspect-ratio: auto; /* Remove 1:1 ratio so text can breathe */
+        aspect-ratio: auto; 
         min-height: 250px;
     }
 
-    /* 5. Stretch the grids */
+    /* 5. KEEP: Stretch the grids */
     .projects-grid, .experience-grid, .hobby-grid {
-        grid-template-columns: 1fr; /* Single column for all grid items */
+        grid-template-columns: 1fr; 
     }
 }
