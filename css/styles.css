@@ -194,13 +194,33 @@ nav {
     position: relative;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-/* The Vibe Shift: Indigo to Teal */
+/* --- HOBBY HOVER STYLE --- */
 .hobby-card.personal-vibe:hover {
     border-color: #2dd4bf; /* Teal */
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 30px rgba(45, 212, 191, 0.1);
     background: linear-gradient(145deg, var(--card-bg), #0f172a); /* Deep Indigo tint */
+}
+
+/* 1. Hide the description text by default */
+.hobby-card.personal-vibe p {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    pointer-events: none; /* Prevents text from blocking hover if it's "invisible" */
+}
+
+/* 2. Show the text when the card is hovered */
+.hobby-card.personal-vibe:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Optional: Make the title/emoji move up slightly to make room */
+.hobby-card.personal-vibe:hover h3, 
+.hobby-card.personal-vibe:hover .hobby-emoji {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
 }
 
 .badge {
