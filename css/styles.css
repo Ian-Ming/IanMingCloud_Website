@@ -21,6 +21,9 @@ body.light-mode {
     --text-heading: #1a1a1a;
     --text-body: #4b5563;
     --border-color: rgba(185, 29, 29, 0.1);
+    --text-heading: #111827; /* Near black for headers */
+    --text-body: #374151;    /* Deep slate gray for body text */
+    --border-color: rgba(0, 0, 0, 0.1); /* Subtle dark border instead of red */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -245,7 +248,7 @@ nav {
 
 .hobby-card h3 {
     font-family: var(--font-heading);
-    color: #f8fafc;
+    color: #0080ff;
     margin-bottom: 10px;
 }
 /* --- PROFILE SIDE --- */
@@ -332,6 +335,12 @@ nav {
     background: rgba(45, 212, 191, 0.1);
     color: #2dd4bf;
     border-color: rgba(45, 212, 191, 0.2);
+}
+
+body.light-mode .hobby-card.personal-vibe:hover {
+    background: linear-gradient(145deg, #ffffff, #f0f9ff); /* Light blue tint instead of dark indigo */
+    border-color: var(--secondary-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
 }
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 850px) {
